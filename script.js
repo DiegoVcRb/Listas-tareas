@@ -6,6 +6,8 @@ const contenedorTareas = document.getElementById("contenedorTareas");
 const mensaje = document.getElementById("mensaje");
 const contadorTotales = document.getElementById("contadorTotales");
 const contadorTerminadas = document.getElementById("contadorTerminadas");
+const botonOcultar = document.getElementById('botonOcultar');
+const botonEliminar = document.getElementById('botonEliminar')
 
 /* Función para crear el elemnto tarea (Función creadora del Nodo Tarea) */
 
@@ -71,38 +73,98 @@ function crearElementoTarea(){
 function actualizarContadores(){
     // Contamos los elementos con la clase tarea
     const tareasTotales = document.querySelectorAll('.tarea');
+
     const tareasCompletadas = document.querySelectorAll('.tarea-completada');
+
 
     // Actualizamos los contadores en el DOM
    contadorTotales.textContent = tareasTotales.length;
+
    contadorTerminadas.textContent = tareasCompletadas.length;
 }
 
-/* Escuchador */
+
+/* Función Ocultar y Mostrar las tareas completadas */
+
+let tareasOcultas = false;
+
+function toggleOcultarCompletadas() {
+    // Contamos los elementos con la clase tarea-completada
+    const tareasCompletadas = document.querySelectorAll('.tarea-completada')
+
+    tareasCompletadas.forEach( (tarea) => {
+        // Codigo que se ejucuta por cada una de  las tareas
+        if(tareasOcultas) {
+            // Asiganar un display flex. hacerlas visibles.
+            tarea.style.display = 'flex';
+        } else {
+        // Asiganar un display nonde. hace que se oculten
+            tarea.style.display = 'none';
+        }
+
+    } );
+    // Cambiamos el estado de la variable tareas ocultas
+    tareasOcultas = !tareasOcultas;
+
+    // Cambiamos el texto del boton
+
+    if(tareasOcultas) {
+        botonOcultar.textContent = 'Mostrar Completadas'
+    }else{
+        botonOcultar.textContent = 'Ocultar Completadas'
+    }
+
+}
+
+/* toggleOcultarCompletadas() */
+/* Funcion Eliminar Todas las Traeas Completadas */
+
+function elieminarCompletadas() {
+    // Contar las tareas con la clase tarea-completada
+    const tareasCompletadas = document.querySelectorAll('.tarea-completada');
+
+    // Eliminar cada tarea comlletada
+    tareasCompletadas.forEach( (tarea) => { tarea.remove() } )
+
+    // Actualizar los contadores
+    actualizarContadores();
+}
+
+
+/* Escuchadores de Botones*/
 
 botonAgregar.addEventListener("click" , agregarTarea);
+botonOcultar.addEventListener("click" , toggleOcultarCompletadas);
+botonEliminar.addEventListener("click" , elieminarCompletadas)
+
 
 /* Función Agregar el Elemento Tarea */
 
     function agregarTarea(){
 
-        //Consante para evaluar si hay texto o no.
+        //Generar la constante para evaluar si hay texto o no
         const texto = tareaEntrada.value.trim();
 
-        if(!texto) {
-            mensaje.textContent = 'Agrega texto! 💢';
-        }else{
-             // Traemos el elemento retornado por la función crearElementoTarea
-             const elementoTarea = crearElementoTarea();
-             contenedorTareas.append(elementoTarea);
+        // Evaluar constante de texto
+        if(texto) {
+            
+            // Traemos ele elemento retornado por la funcion crearElementoTarea
+            const elementoTarea = crearElementoTarea();
+            contenedorTareas.append(elementoTarea);
 
-             // Reiniciar el value del input
-             tareaEntrada.value = ' ';
+            // Reiniciar el value del input
+            tareaEntrada.value = '';
 
-             mensaje.textContent = 'Tarea creada correctamente! 👍';
+            // Mostrar el menaje de tarea creada satisfactoriamente 
+            mensaje.textContent = 'Tarea creada correctamente! 👍';
 
-             //  Actualizamos los contadores
-             actualizarContadores();
+            // Actualizamos los contadores
+            actualizarContadores();
+
+        } else {
+           // Ejecutas esto otro
+           mensaje.textContent = 'No escribiste nada pa! 💢'; 
+            
         }
 
     }

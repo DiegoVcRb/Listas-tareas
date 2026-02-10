@@ -20,7 +20,7 @@
     --icon-color-hover: #ffffff;
 
     /* Colores de textos */
-    --text-primary: #4765eb;
+    --text-primary: #f0f1f6;
     --text-secondary: #abc5ef;
     --text-counter: #d23df8;
 
@@ -37,14 +37,14 @@
 
     /* Botones color*/
 
-    --btn-add-color: #004de8;
+    --btn-add-color: #2a6cee;
     --btn-hide-color: #ffc124;
     --btn-remove-color: #da1734;
 
 
-    --btn-add-color-hover: #000000;
-    --btn-hide-color-hover: #000000;
-    --btn-remove-color-hover: #000000;
+    --btn-add-color-hover: #0b204e;
+    --btn-hide-color-hover: #8c7106;
+    --btn-remove-color-hover: #5b1111;
 
     --btn-text-color:var(--bg-body);
     --btn-text-color-hover: var(--text-primary);
