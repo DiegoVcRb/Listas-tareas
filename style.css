@@ -1,221 +1,210 @@
-/* resset */
-
+/* Reset Basico */
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: Montserrat;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-/* Propiedades Personalizadas */
 :root {
 
-  /* Colores de Contenedores Principales */
-  --bg-body: #05330d;
-  --bg-container: #0f6b3a;
-  --bg-container-counter: #083615;
-  --bg-task: #89cac7;
-  --bg-task-complete: #98c254;
-  
-  /* Espacios */
-  --space-l: 1rem;
-  --space-m: .8rem;
-  --space-s: .5rem;
+    /* Fuentes */
+    --font-primary: 'Google Sans', sans-serif;
 
-  /* Colores de Textos */
-  --text-primary: #e6e4e4;
-  --text-secondary: #646464;
-  --text-counter: #d1fff0;
+    /* Colores de Contenedores principales */
+    --bg-body: #131313;
+    --bg-container: #26272b;
+    --border-container: #3e3b40;
+    --bg-task: #f36900;
+    --bg-task-complete: #ce4f5a;
+    --bg-container-counter: #25101d;
+    --icon-color-hover: #ffffff;
 
-  /* Color Botones */
-  --btn-add-color: #fff2bc;
-  --btn-add-color-hover: #797057;
-  --btn-hide-color: #ffdb70;
-  --btn-hide-color-hover: #6e5d31;
-  --btn-remove-color: #ffa844;
-  --btn-remove-color-hover: #864223;
+    /* Colores de textos */
+    --text-primary: #4765eb;
+    --text-secondary: #abc5ef;
+    --text-counter: #d23df8;
 
-  --btn-text-color: var(--bg-body);
-  --btn-text-color-hover: var(--text-primary);
-  
-  /* Bordes */
-  --border-container: #c2911f;
-  --border-radius: 8px;
-  --border-size: 2px:
+    /* Espacios */
+    --space-l: 1rem;
+    --space-n: .8rem;
+    --space-s: .5rem;
 
-  /* Iconos */
-  --icon-color: ;
-  --icon-color: #e6e4e4;
-  --icon-color-hover: #083a17;
+    /* Bordes */
+
+    --border-radius: 4px;
+    --border-size: 1px;
+    --border-container: #3a3b40;
+
+    /* Botones color*/
+
+    --btn-add-color: #004de8;
+    --btn-hide-color: #ffc124;
+    --btn-remove-color: #da1734;
+
+
+    --btn-add-color-hover: #000000;
+    --btn-hide-color-hover: #000000;
+    --btn-remove-color-hover: #000000;
+
+    --btn-text-color:var(--bg-body);
+    --btn-text-color-hover: var(--text-primary);
+
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  min-height: 100vh;
-
-  font-family: 'Raleway'  'Montserrat';
-  padding: var(--space-l);
-  background-color: var(--bg-body);
+body{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    padding: var(--space-l);
+    background-color: var(--bg-body);
 }
 
 .contenedor {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-l);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    width: 100%;
+    max-width: 640px;
+    height: fit-content;
 
-  width: 100%;
-  max-width: 640px;
-  height: fit-content;
+    padding: var(--space-l);
 
-  padding: var(--space-m);
+    border-width: var(--border-size);
+    border-style: solid;
+    border-color: var(--border-container);
 
-  border-width: var(--border-size);
-  border-style: solid;
-  border-color: var(--border-container);
-
-  border-radius: var(--border-radius);
-  background-color: var(--bg-container);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-container);
 }
 
 .titulo {
-  font-size: 1.5rem;
-  color: var(--text-primary);
+    font-size: 1.6rem;
+    color: var(--text-primary);
 }
 
 .mensaje {
-  font-size: 1rem;
-  color: var(--text-secondary);
+    font-size: 1rem;
+    color: var(--text-secondary);
 }
 
 .tarea-entrada {
-  width: 100%;
-  font-size: 1rem;
-  padding: var(--space-l);
-  border-radius: var(--border-radius);
-  border: none;
-  
+    width: 100%;
+    font-size: 1.2rem;
+    padding: var(--space-n);
+    border-radius: var(--border-radius);
+    border: none;
 }
 
 .contenedor-botones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-m);
-  width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-n);
+    width: 100%;
 }
 
 .boton {
-  padding: var(--space-m) var(--space-s);
-  border: none;
-  border-radius: var(--border-radius);
-  font-size: .9rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--btn-text-color);
+    padding: var(--space-n) var(--space-s);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .boton:hover {
-  color: var(--btn-text-color-hover);
-  transition: 0.5s ease;
+    color: var(--btn-text-color-hover);
 }
 
 .boton-agregar {
-  color: var(--btn-text-color);
-  background-color: var(--btn-add-color);
+    background-color: var(--btn-add-color);
 }
+
+.boton-ocultar{
+    background-color: var(--btn-hide-color);
+}
+
+.boton-eliminar{
+    background-color: var(--btn-remove-color);
+}
+
 
 .boton-agregar:hover {
-  background-color: var(--btn-add-color-hover);
-  transition: 0.5s ease;
+    background-color: var(--btn-add-color-hover);
 }
 
-.boton-ocultar {
-  color: var(--btn-text-color);
-  background-color: var(--btn-hide-color);
+.boton-ocultar:hover{
+    background-color: var(--btn-hide-color-hover);
 }
 
-.boton-ocultar:hover {
-  background-color: var(--btn-hide-color-hover);
-  transition: 0.5s ease;
+.boton-eliminar:hover{
+    background-color: var(--btn-remove-color-hover);
 }
 
-.boton-eliminar {
-  color: var(--btn-text-color);
-  background-color: var(--btn-remove-color);
+.contenedor-conteo{
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-n);
+    padding: var(--space-n);
+    background-color: var(--bg-container-counter);
+    border: 1px solid var(--border-container);
+    border-radius: var(--border-radius);
 }
 
-.boton-eliminar:hover {
-  background-color: var(--btn-remove-color-hover);
-  transition: 0.5s ease;
+.contenedor-conteo p {
+    color: var(--text-counter);
+    font-size: .95rem;
 }
 
-.conteo-conteo {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-m);
-  padding: var(--space-m);
-  background-color: var(--bg-container-counter);
-  border: 1px solid var(--border-container);
-  border-radius: var(--border-radius);
+.tareas-totales, .tareas-terminadas{
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
-.conteo-conteo p {
-  color: var(--text-counter);
-  font-size: .95rem;
+.contenedor-tareas{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    width: 100%;
 }
 
-.tareas-totales,
-.tareas-terminadas {
-  color: var(--text-primary);
-  font-weight: 500;
+.tarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-n);
+    padding: var(--space-s) var(--space-n);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-task);
 }
 
-.contenedor-tareas {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-s);
-  width: 100%;
+.tarea-texto{
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
-.tarea {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  gap: var(--space-m);
-  padding: var(--space-s) var(--space-m);
-
-  border-radius: var(--border-radius);
-
-  background-color: var(--bg-task);
+.tarea-iconos{
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--space-n);
 }
 
-.tarea-texto {
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
-.tarea-iconos {
-  flex-grow: 0;
-  flex-shrink: 0;
-
-  display: flex;
-  gap: var(--space-m);
-
+.tarea-completada{
+    background-color: var(--bg-task-complete);
+    text-decoration: line-through;  
 }
 
 .tarea-iconos i {
-  font-size: 1.5rem;
-  color: var(--icon-color);
-  cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--icon-color);
+    cursor: pointer;
 }
+
 
 .tarea-iconos i:hover {
-  color: var(--icon-color-hover);
-  transition: 0.3s ease;
-}
-
-.tarea-completada {
-  background-color: var(--bg-task-complete);
+    font-size: 1.4rem;
+    color: var(--icon-color-hover);
+    cursor: pointer;
 }
